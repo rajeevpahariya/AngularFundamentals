@@ -1,0 +1,48 @@
+<p>product works!</p>
+<p *ngIf=true>product works with if directive!</p> <!--If directive use-->
+<br> Prouct Cost = {{productCost}} <!--Component data member access-->
+<br> product Cost from Method = {{getProuctCost()}} <!--Component method access-->
+<br> {{['Ram', 'Rajeev', 'Raghu']}} <!--Array Creation-->
+<br> {{['Ram', 'Rajeev', 'Raghu'][0]}} <!--Array Data access-->
+<br> {{ {productId:1234, productName: 'iPhone', porductCost: 678354.98} }} <!--Object Creation-->
+<br> {{ {productId:1234, productName: 'iPhone', porductCost: 678354.98}.productName }} <!--Object Data Access-->
+<br> Product Object : {{ product}}
+<br> Product Id : {{ product.id }}
+<br> Product Name : {{ product.name }}
+<br> Product Price : {{ product.price }}
+<br> Products Object : {{ products}}
+<br> Product1 Object : {{ products[0].id}} , {{ products[0].name}}, {{ products[0].price}}
+<br> Product2 Object : {{ products[1].id}} , {{ products[1].name}}, {{ products[1].price}}
+<br> Product3 Object : {{ products[2].id}} , {{ products[2].name}}, {{ products[2].price}}
+
+<!--Below is the code to iterate the products -->
+<!-- systax : *ngFor='let item of items' -->
+<table>
+    <tr>
+      <th>Product Id</th>
+      <th>Product Name</th>
+      <th>Product Price</th>
+    </tr>
+    <tr *ngFor='let product of products'>
+      <td>{{ product.id }}</td>
+      <td>{{ product.name }}</td>
+      <td>{{ product.price }}</td>
+    </tr>
+  </table>
+
+  <table>
+    <tr>
+      <th>Product Id</th>
+      <th>Product Name</th>
+      <th>Product Price</th>
+    </tr>
+    <tr *ngFor='let product of customProducts'>
+      <td>{{ product.id }}</td>
+      <td>{{ product.name }}</td>
+      <td>{{ product.price }}</td>
+    </tr>
+  </table>
+
+  <!-- One way and 2 way binding examples-->
+
+  Two Way Data : <input type="text" [(ngModel)]=twoWayData> {{twoWayData}}
