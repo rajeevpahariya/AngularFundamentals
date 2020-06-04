@@ -43,6 +43,29 @@
     </tr>
   </table>
 
+  <table>
+    <tr>
+      <th>Product Id</th>
+      <th>Product Name</th>
+      <th>Product Price</th>
+      <th>Product Color</th>
+    </tr>
+    <tr *ngFor='let product of customProducts' [ngSwitch]="product.color">
+      <td>{{ product.id }}</td>
+      <td>{{ product.name }}</td>
+      <td>{{ product.price }}</td>
+      <td *ngSwitchCase="'blue'" style="color:blue;">
+        {{ product.color }}
+      </td>
+      <td *ngSwitchCase="'red'" style="color:red;">
+        {{ product.color }}
+      </td>
+      <td *ngSwitchCase="'yellow'" style="color:yellow;">
+        {{ product.color }}
+      </td>
+    </tr>
+  </table>
+
   <!-- One way and 2 way binding examples-->
 
   Two Way Data : <input type="text" [(ngModel)]=twoWayData> {{twoWayData}}

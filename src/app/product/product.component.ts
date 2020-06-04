@@ -43,7 +43,6 @@ export class ProductComponent implements OnInit {
       id : 1234,
       name : "iPhone1",
       price : 25000,
-      color : 'blue'
     },
     {
       id : 1235,
@@ -64,17 +63,20 @@ export class ProductComponent implements OnInit {
     {
       id : 1234,
       name : "iPhone1",
-      price : 25000
+      price : 25000,
+      color : 'blue'
     },
     {
       id : 1235,
       //name : "iPhone2",
-      price : 50000
+      price : 50000,
+      color : 'red'
     },
     {
       id : 1236,
       name : "iPhone3",
-      price : 75000
+      price : 75000,
+      color : 'yellow'
     }
   ]
 
