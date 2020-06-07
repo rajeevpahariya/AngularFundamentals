@@ -24,6 +24,8 @@ export class ProductComponent implements OnInit {
 
   ngOnInit(): void {
   }
+  title : string = 'Angular Tutorial';
+  birthDate : Date = new Date(1988, 2, 31)
   productCost = 30; // by defualt its public
   private productCost1 = 40; // cant use in product html file;
   private productCost2:number = 50; // to define the data type;
@@ -83,4 +85,8 @@ export class ProductComponent implements OnInit {
   // One and Two way bidning examples
   twoWayData = 30;
 
+  // Event Handling
+  clickMeFunction():void {
+    console.log("Testing the click event");
+  }
 }

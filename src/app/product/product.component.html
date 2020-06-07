@@ -69,3 +69,41 @@
   <!-- One way and 2 way binding examples-->
 
   Two Way Data : <input type="text" [(ngModel)]=twoWayData> {{twoWayData}}
+
+  <!-- Event Handling-->
+  <br>
+  <input type="button" value="clickMe" (click)=clickMeFunction() style="color: crimson;">
+
+  <!-- Pipes examples-->
+
+  <table>
+    <tr>
+      <th>Product Id</th>
+      <th>Product Name</th>
+      <th>Product Price</th>
+      <th>Product Color</th>
+    </tr>
+    <tr *ngFor='let product of customProducts' [ngSwitch]="product.color">
+      <td>{{ product.id }}</td>
+      <td>{{ product.name | uppercase}}</td> <!-- uppercase/lowwercase are some of inbuit pipes-->
+      <td>{{ product.price | currency : 'INR' : false}}</td>  <!-- currency - default is dollars. To change to INR sign-->
+      <!-- If wanted to print INR not the sign then we can pass false as another arg-->
+      <td *ngSwitchCase="'blue'" style="color:blue;">
+        {{ product.color }}
+      </td>
+      <td *ngSwitchCase="'red'" style="color:red;">
+        {{ product.color }}
+      </td>
+      <td *ngSwitchCase="'yellow'" style="color:yellow;">
+        {{ product.color }}
+      </td>
+    </tr>
+  </table>
+
+  <!-- Slice Pipe to trim the string-->
+  <br> <br>{{title}}
+  <br> <br>{{title | slice : 7}} <!-- This will start the data from 8th Index-->
+  <br> <br>{{title | slice : 0 : 7}} <!-- This will start the data from 0th Index to 6th-->
+  <br> <br>{{birthDate | date : 'fullDate' | uppercase}} <!-- -->
+  <br> <br>{{products | json}} <!-- json applied only on Objects -->
+  <br> <br>{{title | reverseString}}

@@ -7,7 +7,9 @@ import {WelcomeComponent} from './welcome/welcome.component';
 import { ProductComponent } from './product/product.component';
 import { CustomerComponent } from './customer/customer.component';
 import { UserComponent } from './user/user.component'
-import {FormsModule} from '@angular/forms'
+import {FormsModule} from '@angular/forms';
+import { MyPipe } from './my.pipe';
+import { ReverseStringPipe } from './reverse-string.pipe';
 
 @NgModule({
   declarations: [
@@ -15,7 +17,9 @@ import {FormsModule} from '@angular/forms'
     WelcomeComponent,
     ProductComponent,
     CustomerComponent,
-    UserComponent
+    UserComponent,
+    MyPipe,
+    ReverseStringPipe,
   ],
   imports: [
     BrowserModule,
